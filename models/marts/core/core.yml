@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: Orders with their payments
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: The customer that placed this order
+      - name: amount
+        description: Payed amount
+  - name: dim_customers
+    description: Final customers data
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+      - name: last_name
+      - name: first_order_date
+      - name: most_recent_order_date
+      - name: number_of_orders
+      - name: lifetime_value

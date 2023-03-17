@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: Payments on orders
+    columns:
+      - name: payment_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: ID of the order this payment was for
+      - name: amount
+        description: The amount that was payed (can be negative in case of refund)
